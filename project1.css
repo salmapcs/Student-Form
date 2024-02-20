@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-
 }
 
 body {
@@ -12,61 +11,59 @@ body {
 h1 {
     text-align: center;
     color: white;
-    height: 73px;
     padding-top: 20px;
+    margin-bottom: 20px; /* Added for spacing */
+}
+
+th, td {
+    color: aliceblue;
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
 }
 
 .container {
     width: 380px;
-    height: 620px;
+    height: auto; /* Changed to auto for flexibility */
     display: grid;
-    color: rgb(12, 11, 11);
+    color: #0c0b0b; /* Changed to hexadecimal for consistency */
     background-color: white;
     border-radius: 1.5%;
-    margin-right: 81px;
-    margin-left: 55px;
-    float: right;
+    margin: 0 auto; /* Center the container */
+    margin-top: 50px; /* Added for spacing */
+    padding: 20px; /* Added for spacing */
 }
-.title{
+
+.title {
     height: 50px;
+    margin-bottom: 20px; /* Added for spacing */
 }
+
 h2 {
     text-align: center;
-    color: rgb(12, 12, 12);
-    height: 20px;
-    padding-top: 17px;
+    color: #0c0b0b; /* Changed to hexadecimal for consistency */
 }
 
 .box1 {
-    height: 672px;
-    margin-left: 35px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
-    margin-right: 35px;
 }
 
-#box {
-    color: white;
-    /* margin-left: 24px; */
-
-}
-
-.box-title{
+.box-title {
     height: 20px;
+    margin-bottom: 10px; /* Added for spacing */
 }
-#id {
-    width: 20px;
-    height: 10px;
-    color: white;
-}
-.login{
+
+.login {
     height: 35px;
     font-size: medium;
     margin-top: 15px;
     background-color: chocolate;
-    color: rgb(252, 250, 250);
+    color: white;
+    border: none; /* Removed default button border */
+    cursor: pointer; /* Changed to cursor pointer for consistency */
 }
-.login:hover{
-    cursor: pointer;
+
+.login:hover {
+    background-color: #8b4513; /* Darker shade of chocolate on hover */
 }

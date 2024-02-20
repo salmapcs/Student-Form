@@ -8,37 +8,42 @@
     <link rel="stylesheet" href="project1.css">
 </head>
 
-<body>
-    <div>
-
-
+<html>
+    <body>
         <h1>POST MATRIX SCHOLARSHIP</h1>
+        <table id="userData">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
         <div class="container">
             <div class="title">
                 <h2>Student Form </h2>
             </div>
-
             <div class="box1">
-                <table>
+                    <form id="userForm" action="process.php">
 
-                    <form action="process.php">
-
-                        <label class="box-title" id="Name" aria-required="true">NAME: </label>
-                        <input type="text" name="name" placeholder="ENTER YOUR NAME" id="NAME" style="height: 23px;"
-                            required><br>
+                        <label class="box-title" for="name" aria-required="true">NAME:</label>
+                    <input type="text" name="name" placeholder="ENTER YOUR NAME" id="name" style="height: 23px;" required><br>
                
-                        <label class="box-title" id="PASS">PASSWORD:</label>
-                        <input type="password" maxlength="10" style="height: 23px;" required><br>
+                    <label class="box-title" for="pass">PASSWORD:</label>
+                    <input type="password" name="pass" maxlength="10" style="height: 23px;" required><br>
                     
-                        <label class="box-title" id="email">EMAIL:</label>
-                        <input type="email" name="email" placeholder="    @gmail.com   " style="height: 23px;"
-                            required><br>
+                    <label class="box-title" for="email">EMAIL:</label>
+                    <input type="email" name="email" placeholder="    @gmail.com   " style="height: 23px;" required><br>
                        
-                        <label class="box-title" id="TEL">PHONE NO.:</label>
-                        <input type="tel" maxlength="10" style="height: 23px;" required><br>
-                       
+                    <label class="box-title" for="tel">PHONE NO.:</label>
+                    <input type="tel" name="tel" maxlength="10" style="height: 23px;" required><br>
+                    
+                    
 
-                        <label class="box-title" id="Certificate">CERTIFICATE:</label>
+                        <!-- <label class="box-title" id="Certificate">CERTIFICATE:</label>
                         <input type="file" name="file" style="height: 23px;" required><br>
                         
 
@@ -80,50 +85,68 @@
                             <option value="course">BBA</option>
                             <option value="course">MCA</option>
                         </select>
-                        
-                        <button class="login" type="button">Submit</button>
-                    </form>
-
-                </table>
-                <br>
+                         -->
+                         <button class="login" type="submit">Submit</button>
+                        </form>
             </div>
         </div>
 
 
-</body>
+
 <script>
-
-    const otherradio = document.querySelector("#other");
-    const otherText = document.querySelector("#otherValue");
-    otherText.style.visibility = "hidden";
-
-    otherradio.addEventListener("change", () => {
-        if (otherradio.checked) {
-            otherText.style.visibility = "visible";
-            otherText.value = "";
-        } else {
-            otherText.style.visibility = "hidden";
-        }
+document.getElementById('userForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var name = document.getElementById('Name').value;
+        var pass = document.getElementById('Pass').value;
+        var email = document.getElementById('Email').value;
+        var tel = document.getElementById('Tel').value;
+        
+        var table = document.getElementById('userData').getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow();
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var cell4 = newRow.insertCell(3);
+        
+        cell1.innerHTML = name;
+        cell2.innerHTML = pass;
+        cell3.innerHTML = email;
+        cell4.innerHTML = tel;
+        
+        document.getElementById('userForm').reset();
     });
-    // Get the button element
-    const button = document.querySelector('button');
-
-    // Add an event listener to the button that listens for the click event
-    button.addEventListener('click', function () {
-        // Display the prompt when the button is clicked
-        const userpassword = prompt('Please enter your password again');
-        console.log(userpassword);
-        userpassword=confirm("Are you really want to submit this form ?");
-        console.log(userpassword);
-        
-            if (userpassword) {
-            alert("login successfully");
-        }
-        else{
-             alert("login failed");
-        
-        }});
-
 </script>
-
+</body>
 </html>
+    <!-- // const otherradio = document.querySelector("#other");
+    // const otherText = document.querySelector("#otherValue");
+    // otherText.style.visibility = "hidden";
+
+    // otherradio.addEventListener("change", () => {
+    //     if (otherradio.checked) {
+    //         otherText.style.visibility = "visible";
+    //         otherText.value = "";
+    //     } else {
+    //         otherText.style.visibility = "hidden";
+    //     }
+    // });
+    // // Get the button element
+    // const button = document.querySelector('button');
+
+    // // Add an event listener to the button that listens for the click event
+    // button.addEventListener('click', function () {
+    //     // Display the prompt when the button is clicked
+    //     const userpassword = prompt('Please enter your password again');
+    //     console.log(userpassword);
+    //     userpassword=confirm("Are you really want to submit this form ?");
+    //     console.log(userpassword);
+        
+    //         if (userpassword) {
+    //         alert("login successfully");
+    //     }
+    //     else{
+    //          alert("login failed");
+        
+    //     }}); -->
+
