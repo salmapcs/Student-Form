@@ -27,7 +27,7 @@
             <option value="other">Other</option>
         </select><br><br>
         <div>
-            <button type="submit" name="button"  id="btn" value="add" onclick="AddRow()">Submit</button>
+            <button type="submit" name="button"  id="btn" value="add" >Submit</button>
         </div><br>
     </form>
 
@@ -78,15 +78,11 @@
 //         x++;
     
 //   }
-
-
-
-
     var call =document.getElementById('studentform');
-    call.addEventListener('submit');
+    call.addEventListener('submit',
     
-    function(pass) {
-        pass.preventDefault();
+     function(event) {
+         event.preventDefault();
 
     var firstName = document.getElementById('firstName').value;
         var lastName = document.getElementById('lastName').value;
@@ -94,7 +90,7 @@
         var gender = document.getElementById('gender').value;
 
         var table = document.getElementById('studentData').getElementsByTagName('tbody')[0];
-
+        var ntable = document.getElementById('studentData')
         var newRow = table.insertRow();
         var cel1 = newRow.insertCell(0);
         var cel2 = newRow.insertCell(1);
@@ -106,9 +102,8 @@
         cel3.innerHTML = age;
         cel4.innerHTML = gender;
 
-        document.getElementById('studentform').reset();
-
-    };
+       })
+     // document.getElementById('studentform').reset();
         
 </script>
 </body>
