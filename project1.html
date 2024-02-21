@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="project1.css">
 </head>
+
 <html>
     <body>
         <h1>POST MATRIX SCHOLARSHIP</h1>
@@ -27,7 +29,7 @@
             <div class="box1">
                     <form id="userForm" action="process.php">
 
-                    <label class="box-title" for="name" aria-required="true">NAME:</label>
+                        <label class="box-title" for="name" aria-required="true">NAME:</label>
                     <input type="text" name="name" placeholder="ENTER YOUR NAME" id="name" style="height: 23px;" required><br>
                
                     <label class="box-title" for="pass">PASSWORD:</label>
@@ -38,7 +40,10 @@
                        
                     <label class="box-title" for="tel">PHONE NO.:</label>
                     <input type="tel" name="tel" maxlength="10" style="height: 23px;" required><br>
-                        <!-- <label class="box-title" id="Certificate">CERTIFICATE:</label>
+                    
+                    
+
+                        <label class="box-title" id="Certificate">CERTIFICATE:</label>
                         <input type="file" name="file" style="height: 23px;" required><br>
                         
 
@@ -68,6 +73,8 @@
                             </label>
                             <input type="text" id="otherValue" name="other" aria-label="Other interest" />
                         </div><br>
+
+
                         <label class="box-title" for="cousre">COURSE: </label>
                         <select name="Course" id="course" style="height: 23px;">
                             <option value="course">SELECT COURSE</option>
@@ -78,13 +85,37 @@
                             <option value="course">BBA</option>
                             <option value="course">MCA</option>
                         </select>
-                         -->
+                        
                          <button class="login" type="submit">Submit</button>
                         </form>
             </div>
-     </div>
+        </div>
+
 <script>
 
+
+document.getElementById('userForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var name = document.getElementById('Name').value;
+        var pass = document.getElementById('Pass').value;
+        var email = document.getElementById('Email').value;
+        var tel = document.getElementById('Tel').value;
+        
+        var table = document.getElementById('userData').getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow();
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var cell4 = newRow.insertCell(3);
+        
+        cell1.innerHTML = name;
+        cell2.innerHTML = pass;
+        cell3.innerHTML = email;
+        cell4.innerHTML = tel;
+        
+        document.getElementById('userForm').reset();
+    });
 </script>
 </body>
 </html>
