@@ -46,67 +46,69 @@
 </div>
 <script>
 
-  var list1 =[];
-  var list2 =[];
-  var list3 =[];
-  var list4 =[];
+//   var list1 =[];
+//   var list2 =[];
+//   var list3 =[];
+//   var list4 =[];
 
-  var n=1;
-  var x=0;
+//   var n=1;
+//   var x=0;
 
-  function AddRow(){
-
-    var Addrown =document.getElementById('studentData');
-    var newRow =Addrown.insertRow(n);
-
-    list1[x] = document.getElementById("firstName").value;
-    list2[x] = document.getElementById("lastName").value;
-    list3[x] = document.getElementById("age").value;
-    list4[x] = document.getElementById("gender").value;
-
-    var cel1= newRow.insertCell(0);
-    var cel2= newRow.insertCell(1);
-    var cel3= newRow.insertCell(2);
-    var cel4= newRow.insertCell(3);
-
-        cel1.innerHTML = list1[x];
-        cel2.innerHTML = list2[x];
-        cel3.innerHTML = list3[x];
-        cel4.innerHTML = list4[x];
-
-        n++;
-        x++;
+//   function AddRow(){
     
-  }
+//     var AddRown =document.getElementById('studentData');
+//     var NewRow =AddRown.insertRow(n);
+
+//     list1[x] = document.getElementById("firstName").value;
+//     list2[x] = document.getElementById("lastName").value;
+//     list3[x] = document.getElementById("age").value;
+//     list4[x] = document.getElementById("gender").value;
+
+//     var cel1= NewRow.insertCell(0);
+//     var cel2= NewRow.insertCell(1);
+//     var cel3= NewRow.insertCell(2);
+//     var cel4= NewRow.insertCell(3);
+
+//         cel1.innerHTML = list1[x];
+//         cel2.innerHTML = list2[x];
+//         cel3.innerHTML = list3[x];
+//         cel4.innerHTML = list4[x];
+
+//         n++;
+//         x++;
+    
+//   }
 
 
 
 
-    // var call =document.getElementById('studentform');
-    // call.addEventListener('submit',function(event) {
-    //     event.preventDefault();
+    var call =document.getElementById('studentform');
+    call.addEventListener('submit');
+    
+    function(pass) {
+        pass.preventDefault();
 
-    // var firstName = document.getElementById('firstName').value;
-    //     var lastName = document.getElementById('lastName').value;
-    //     var age = document.getElementById('age').value;
-    //     var gender = document.getElementById('gender').value;
+    var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var age = document.getElementById('age').value;
+        var gender = document.getElementById('gender').value;
 
-    //     var table = document.getElementById('studentData').getElementsByTagName('tbody')[0];
+        var table = document.getElementById('studentData').getElementsByTagName('tbody')[0];
 
-    //     var newRow = table.insertRow();
-    //     var cell1 = newRow.insertCell(0);
-    //     var cell2 = newRow.insertCell(1);
-    //     var cell3 = newRow.insertCell(2);
-    //     var cell4 = newRow.insertCell(3);
+        var newRow = table.insertRow();
+        var cel1 = newRow.insertCell(0);
+        var cel2 = newRow.insertCell(1);
+        var cel3 = newRow.insertCell(2);
+        var cel4 = newRow.insertCell(3);
 
-    //     cell1.innerHTML = firstName;
-    //     cell2.innerHTML = lastName;
-    //     cell3.innerHTML = age;
-    //     cell4.innerHTML = gender;
+        cel1.innerHTML = firstName;
+        cel2.innerHTML = lastName;
+        cel3.innerHTML = age;
+        cel4.innerHTML = gender;
 
-    //     document.getElementById('studentform').reset();
+        document.getElementById('studentform').reset();
 
-    // });
+    };
         
 </script>
 </body>
